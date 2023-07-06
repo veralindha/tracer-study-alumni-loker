@@ -118,7 +118,7 @@ export default function CardLoker() {
                           <span className="category m-2">
                             {item.persyaratan.split(';').map((item, index) => (<div key={index}>{item}<br /></div>))}
                           </span>
-                          <div className="button">
+                          <div className="button" hidden={session.role === 'alumni' ? false : true}>
                             {item.tombol === 'enable' ?
                               <Link href={`/admin-pages/upload/uploadberkas?id=${item.id}`} className="btn">
                                 <i className="lni lni-cart" /> Ajukan Berkas

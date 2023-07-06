@@ -16,8 +16,8 @@ export default function TambahUserAdmin() {
     }
   }, [])
   return (
-    <Layout title="Tambah User Admin - Tracer Study" activeNavBarItem={2} activeUser={''}>
-      <ContentHeader title={'Tambah User Admin'}/>
+    <Layout title="Tambah User - Tracer Study" activeNavBarItem={2} activeUser={''}>
+      <ContentHeader title={'Tambah User'}/>
       <TambahDataContents />
       <TableUsers />
     </Layout>

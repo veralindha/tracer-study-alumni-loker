@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "./footer";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
+import Scripts from "./scripts";
 
 export default function Layout({ children, title = '', activeNavBarItem = 0, activeUser = '', role = '' }) {
   return (
@@ -19,6 +20,7 @@ export default function Layout({ children, title = '', activeNavBarItem = 0, act
         {children}
       </div>
       <Footer/>
+      <Scripts/>
     </div>
   )
 }

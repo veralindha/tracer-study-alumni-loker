@@ -15,6 +15,7 @@ export default function Navbar({ ...props }) {
                   <div className="d-flex justify-content-end">
 
                 <Link className="col" href="/login_alumni"><button  className="btn btn-light">Login Alumni</button></Link>
+                <Link className="col" href="/login_mitra"><button  className="btn btn-light">Login Mitra</button></Link>
                 <Link className="col" href="/login_admin"><button  className="btn btn-light">Login Admin</button></Link>
                   </div>
                 </div>

@@ -58,7 +58,7 @@ export default function Sidebar({ isActiveNavItem = 0, activeUser = '' }) {
               </Link>
             </li>
             <li className="nav-item" hidden={user.role === 'admin' ? false : true}>
-              <Link href="/admin-pages/tambah-user-admin" className={`nav-link ${isActiveNavItem == 2 ? ' active' : ''}`}>
+              <Link href="/admin-pages/tambah-user" className={`nav-link ${isActiveNavItem == 2 ? ' active' : ''}`}>
                 <i className="nav-icon fas fa-users-cog" />
                 <p>
                   Tambah User Admin
@@ -93,7 +93,7 @@ export default function Sidebar({ isActiveNavItem = 0, activeUser = '' }) {
               <Link href={`/admin-pages/loker`} className={`nav-link ${isActiveNavItem == 6 ? ' active' : ''}`}>
                 <i className="nav-icon fas fa-info" />
                 <p>
-                  Info Loker
+                  Loker
                 </p>
               </Link>
             </li>
