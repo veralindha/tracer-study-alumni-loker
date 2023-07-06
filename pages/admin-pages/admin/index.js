@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import Chart from "../../../components/admin_components/admin_dashboard/chart";
-import AdminDashboardContent from "../../../components/admin_components/admin_dashboard/contents";
+// import Chart from "../../../components/admin_components/admin_dashboard/chart";
+// import AdminDashboardContent from "../../../components/admin_components/admin_dashboard/contents";
 import ContentHeader from "../../../components/admin_components/utils/content-header";
 import Layout from "../../../components/admin_components/utils/layout";
 import { getCookie } from "../../../libs/cookies.lib";
@@ -27,12 +27,13 @@ export default function AdminHome() {
   return (
     <Layout title="Admin - Tracer Study" activeNavBarItem={1} activeUser={""}>
       <ContentHeader title={"Dashboard"} />
-      <AdminDashboardContent />
+      <h1>Welcome To Dashboard</h1>
+      {/* <AdminDashboardContent />
       <div className="row">
         <div className="col-md-6">
           <Chart data={data} />
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 }
