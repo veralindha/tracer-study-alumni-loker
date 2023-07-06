@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // provider = "postgresql"
+  // url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("LOCAL_DATABASE_URL")
+  // provider = "sqlite"
+  // url      = env("DEV_DATABASE_URL")
+}
+
+model users {
+  id        Int      @id @default(autoincrement())
+  name      String
+  username  String   @unique
+  password  String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lokers    Loker[]
+}
+
+model Alumnis {
+  id        Int       @id @default(autoincrement())
+  nim       String    @unique
+  nik       String
+  npwp      String?
+  nama      String
+  gender    String
+  angkatan  String?
+  lulus     String?
+  ipk       String?
+  prodi     String?
+  alamat    String?
+  telepon   String?
+  email     String    @unique
+  password  String
+  tracered  String    @default("false")
+  answers   Answers[]
+  lamarans  Lamaran[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+}
+
+model Answers {
+  id            Int      @id @default(autoincrement())
+  answer        String
+  alumnis       Alumnis  @relation(fields: [alumnisId], references: [id])
+  alumnisId     Int
+  question_code String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now())
+}
+
+model Loker {
+  id          Int       @id @default(autoincrement())
+  nama        String
+  persyaratan String
+  image       String?   @db.Text
+  tombol      String    @default("enable")
+  user        users     @relation(fields: [mitraId], references: [id])
+  mitraId     Int
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+  lamarans    Lamaran[]
+}
+
+model Lamaran {
+  id        Int      @id @default(autoincrement())
+  alumnis   Alumnis  @relation(fields: [alumnisId], references: [id])
+  alumnisId Int
+  loker     Loker    @relation(fields: [lokerId], references: [id])
+  lokerId   Int
+  berkas    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
