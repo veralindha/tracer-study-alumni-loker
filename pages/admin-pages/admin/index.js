@@ -66,15 +66,8 @@ export default function AdminHome() {
       <AdminDashboardContent />
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-12">
             <Chart data={data} />
-          </div>
-          <div className="col-md-6">
-            <ul style={{ listStyleType: "square" }}>
-              <li style={{ fontSize: "20px" }}>
-                Jumlah Mitra Masuk : {counter.mitras}
-              </li>
-            </ul>
           </div>
         </div>
       </div>

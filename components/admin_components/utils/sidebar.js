@@ -61,7 +61,7 @@ export default function Sidebar({ isActiveNavItem = 0, activeUser = '' }) {
               <Link href="/admin-pages/tambah-user" className={`nav-link ${isActiveNavItem == 2 ? ' active' : ''}`}>
                 <i className="nav-icon fas fa-users-cog" />
                 <p>
-                  Tambah User Admin
+                  Tambah User
                 </p>
               </Link>
             </li>
