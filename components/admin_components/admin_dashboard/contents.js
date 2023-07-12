@@ -20,9 +20,26 @@ export default function AdminDashboardContent() {
        console.log('Error: ', err.message)
       })
   }
+  const handleCountTahun = () => {
+    fetch('/api/countalumnistahun', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setCounter(data.data)
+      })
+      .catch(err => {
+       console.log('Error: ', err.message)
+      })
+  }
 
   useEffect(() => {
     handleCount()
+    handleCountTahun()
   }, [])
   return (
     <section className="content">
