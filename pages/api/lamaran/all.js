@@ -11,7 +11,13 @@ export default async function handler(req, res) {
             lokerId: lokerIdInt
           },
           select: {
-            berkas: true
+            berkas: true,
+            alumnis: {
+              select: {
+                nama: true,
+                nim: true
+              }
+            }
           }
         })
         .then((lamaran) => {

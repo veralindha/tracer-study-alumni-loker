@@ -112,6 +112,7 @@ export default function Berkas() {
           } else {
             setData([]);
             setLoading(false);
+            console.log(res)
           }
         })
         .catch((err) => {
@@ -235,6 +236,7 @@ export default function Berkas() {
                         <thead>
                           <tr>
                             <th>No</th>
+                            <th>Nama Alumni</th>
                             <th>Nama File</th>
                           </tr>
                         </thead>
@@ -242,6 +244,9 @@ export default function Berkas() {
                           {filteredLamaran.length > 0 ? filteredLamaran.map((item, idx) => (
                             <tr key={idx}>
                               <td style={{ width: "20px" }}>{idx + 1}</td>
+                              <td>
+                              {item.alumnis?.nama}
+                              </td>
                               <td>
                                 {item.berkas} [<a href={item.berkas}>download</a>]
                               </td>
@@ -330,6 +335,7 @@ export default function Berkas() {
                         <thead>
                           <tr>
                             <th>No</th>
+                            <th>Nama Alumni</th>
                             <th>Nama File</th>
                           </tr>
                         </thead>
@@ -337,6 +343,9 @@ export default function Berkas() {
                           {filteredLamaran.length > 0 ? filteredLamaran.map((item, idx) => (
                             <tr key={idx}>
                               <td style={{ width: "20px" }}>{idx + 1}</td>
+                              <td>
+                              {item.alumnis?.nama}
+                              </td>
                               <td>
                                 {item.berkas} [<a href={item.berkas}>download</a>]
                               </td>
