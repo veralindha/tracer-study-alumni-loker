@@ -135,14 +135,14 @@ const Chart = () => {
               <Bar dataKey="count" fill="#8884d8" name="Jumlah Lamaran" />
             </BarChart>
           </div>
-          <div className="col-lg-6">
+          {/* <div className="col-lg-6">
             <ul style={{ listStyleType: "square" }}>
               <li style={{ fontSize: "20px" }}>
                 Mitra yang paling banyak digunakan:{" "}
                 <label className="text-success">{mitraTerbanyak}</label>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
