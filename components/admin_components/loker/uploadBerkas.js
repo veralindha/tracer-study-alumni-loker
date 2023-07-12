@@ -9,7 +9,7 @@ export default function UploadBerkas() {
   const [loading, setLoading] = useState(false);
   const [berkas, setBerkas] = useState(null);
   const [session, setSession] = useState({});
-  console.log(session)
+  console.log(data)
   const router = useRouter();
   const { id } = router.query;
   const handleDetail = async (id) => {
@@ -35,6 +35,7 @@ export default function UploadBerkas() {
       formData.append('berkas', berkas);
       formData.append('lokerId', data.id);
       formData.append('alumnisId', session.id);
+      formData.append('mitraId', data.mitraId);
       const res = await fetch('/api/lamaran/create', {
         method: 'POST',
         body: formData,

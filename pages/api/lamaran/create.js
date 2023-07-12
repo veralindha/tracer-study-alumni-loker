@@ -31,13 +31,14 @@ export default async function handler(req, res) {
         if (err) {
           return res.status(400).json({ error: err.message });
         }
-        const { lokerId, alumnisId } = req.body;
+        const { lokerId, alumnisId, mitraId } = req.body;
         const berkas = `/file/${req.file.filename}`;
         const lamaran = prisma.lamaran.create({
           data: {
             berkas,
             alumnisId: parseInt(alumnisId),
             lokerId: parseInt(lokerId),
+            mitraId: parseInt(mitraId)
           },
         })
           .then((lamaran) => {

@@ -76,6 +76,7 @@ model Lamaran {
   alumnisId Int
   loker     Loker    @relation(fields: [lokerId], references: [id])
   lokerId   Int
+  mitraId   Int?
   berkas    String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

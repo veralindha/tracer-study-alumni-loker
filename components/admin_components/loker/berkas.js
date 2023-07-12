@@ -16,9 +16,9 @@ export default function Berkas() {
   const [role, setRole] = useState("");
   const [session, setSession] = useState({});
   const [idLoker, setIdLoker] = useState([])
-  console.log(lamaran)
+  // console.log(lamaran)
   // console.log(session)
-  console.log(data)
+  // console.log(data)
   const router = useRouter();
   const { id } = router.query;
   const handleDetail = async (id) => {
