@@ -16,8 +16,9 @@ export default function Berkas() {
   const [role, setRole] = useState("");
   const [session, setSession] = useState({});
   const [idLoker, setIdLoker] = useState([])
+  console.log(lamaran)
   // console.log(session)
-  // console.log(data)
+  console.log(data)
   const router = useRouter();
   const { id } = router.query;
   const handleDetail = async (id) => {
@@ -150,7 +151,7 @@ export default function Berkas() {
         setSession(session);
         if (session.role === 'admin') { handleGetLoker(null) } else { handleGetLoker(id) };
       }
-    }, 5000);
+    }, 3000);
   }, []);
 
   useEffect(() => {

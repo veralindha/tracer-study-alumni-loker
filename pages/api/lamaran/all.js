@@ -34,7 +34,18 @@ export default async function handler(req, res) {
           }
         });
       } else {
-        await prisma.lamaran.findMany({})
+        await prisma.lamaran.findMany({
+          select: {
+            berkas: true,
+            lokerId: true,
+            alumnis: {
+              select: {
+                nama: true,
+                nim: true
+              }
+            }
+          }
+        })
           .then((lamaran) => {
             if (lamaran.length == 0) {
               res.status(200).json({
